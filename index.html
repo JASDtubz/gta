@@ -1,0 +1,75 @@
+<!-- Version 2023.10.04.22.28 -->
+<!DOCTYPE html>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <link href="style.css" rel="stylesheet"/>
+    <meta charset="UTF-8"/>
+    <meta content="Jean-Denis Toting de Beauvoir" name="author"/>
+    <noscript>
+    </noscript>
+    <script src="script.js" type="text/javascript">
+    </script>
+    <title>
+      JD's Guess the Anime
+    </title>
+  </head>
+  <body onload="init()">
+    <div class="outer">
+      <div class="title">
+        <h1>
+          JD's Guess the Anime
+        </h1>
+      </div>
+      <div class="inner" id="inner">
+        <div class="homewrap" id="homewrap">
+          <div class="home" id="home">
+            <div class="op" onclick="opstart()">
+              <h2 class="in pointer">
+                Intro
+              </h2>
+            </div>
+            <div class="ed" onclick="edstart()">
+              <h2 class="out pointer">
+                Outro
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="playwrap" id="playwrap">
+          <div class="play" id="play">
+            <div class="reveal pointer">
+              <h1 id="reveal">
+                Reveal
+              </h1>
+            </div>
+            <div class="info pointer">
+              <h2 id="info">
+                Info
+              </h2>
+            </div>
+            <div class="prev pointer">
+              <h2 id="prev">
+                Prev
+              </h2>
+            </div>
+            <div class="back pointer" onclick="home()">
+              <h2 id="back">
+                Home
+              </h2>
+            </div>
+            <div class="next pointer">
+              <h2 id="next">
+                Next
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <h6>
+          Copyright © ASD corp. 2023 Distributed by Second City Software
+        </h6>
+      </div>
+    </div>
+  </body>
+</html>
