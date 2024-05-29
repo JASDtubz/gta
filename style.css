@@ -1,4 +1,4 @@
-/* Version 2024.0523.2323:0051 */
+/* Version 2024.0529.0000:0051 */
 
 html {
   height: 100%;
@@ -77,6 +77,10 @@ h1 {
     '. . .';
 }
 
+.op:hover {
+  background-image: linear-gradient(to bottom left, #33dd11, #44cc22, #55bb33, #55bb33);
+}
+
 h2 {
   font-size: 40px;
   margin-bottom: 0px;
@@ -97,6 +101,10 @@ h2 {
     '. . .'
     '. out .'
     '. . .';
+}
+
+.ed:hover {
+  background-image: linear-gradient(to bottom left, #dd1133, #cc2244, #bb3355, #bb3355);
 }
 
 .out {
@@ -129,14 +137,14 @@ h2 {
   background-color: #ee33ee;
   background-image: linear-gradient(to bottom left, #ee33ee, #ee33ee, #dd44dd, #cc55cc);
   color: #33ee33;
-  display: grid;
   grid-area: r;
-  grid-template-areas:
-    '. . .'
-    '. reveal .'
-    '. . .';
   height: 100%;
+  position: relative;
   width: 100%;
+}
+
+.reveal:hover {
+  background-image: linear-gradient(to bottom left, #ee33ee, #dd44dd, #cc55cc, #cc55cc);
 }
 
 .info {
@@ -153,9 +161,13 @@ h2 {
   width: 100%;
 }
 
+.info:hover {
+  background-image: linear-gradient(to bottom left, #333333, #222222, #111111, #111111);
+}
+
 .prev {
   background-color: #ee1133;
-  background-image: linear-gradient(to bottom left, #ee1133, #ee1133, #dd2244, #cc3355);
+  background-image: linear-gradient(to bottom left, #ee1133, #ee1133, #dd2244, #dd2244);
   color: #11eecc;
   display: grid;
   grid-area: p;
@@ -165,6 +177,10 @@ h2 {
     '. . .';
   height: 100%;
   width: 100%;
+}
+
+.prev:hover {
+  background-image: linear-gradient(to bottom left, #ee1133, #dd2244, #cc3355, #cc3355);
 }
 
 .back {
@@ -181,6 +197,10 @@ h2 {
   width: 100%;
 }
 
+.back:hover {
+  background-image: linear-gradient(to bottom left, #1133ee, #2244dd, #3355cc, #3355cc);
+}
+
 .next {
   background-color: #33ee11;
   background-image: linear-gradient(to bottom left, #33ee11, #33ee11, #44dd22, #55cc33);
@@ -195,8 +215,16 @@ h2 {
   width: 100%;
 }
 
+.next:hover {
+ background-image: linear-gradient(to bottom left, #33ee11, #44dd22, #55cc33, #55cc33);
+}
+
 #reveal {
   grid-area: reveal;
+  position: absolute;
+  text-align: center;
+  top: 22%;
+  width: 100%;
 }
 
 #info {
