@@ -1,4 +1,4 @@
-/* Version 2024.0529.0000:0051 */
+/* Version 2024.0530.1912:0051 */
 
 var intros = [
   { name: "My Ordinay Life<br>Frist Intro", info: "Tier S", link: "https://jasdtubz.github.io/gta/op/my_ordinary_life_1.wav", reveal: false},
@@ -25,27 +25,32 @@ function init() {
 }
 
 function opstart() {
+  document.getElementById("title").innerHTML = `Intros: ${opindex + 1} of ${intros.length}`;
   document.getElementById("homewrap").style.display = "none";
   document.getElementById("playwrap").style.display = "initial";
   
   op = true;
+  reset(true);
   currenttrack = playsound(intros[opindex].link);
 }
 
 function edstart() {
+  document.getElementById("title").innerHTML = `Outros: ${edindex + 1} of ${outros.length}`;
   document.getElementById("homewrap").style.display = "none";
   document.getElementById("playwrap").style.display = "initial";
   
   op = false;
+  reset(true);
   currenttrack = playsound(outros[edindex].link);
 }
 
 function home() {
+  document.getElementById("title").innerHTML = "JD's Guess the Anime";
   document.getElementById("playwrap").style.display = "none";
   document.getElementById("homewrap").style.display = "initial";
   
   op = null;
-  reset();
+  reset(false);
 }
 
 function reveal() {
@@ -72,13 +77,13 @@ function prev() {
   if (op) {
     if (opindex != 0) {
       --opindex;
-      reset();
+      reset(false);
       currenttrack = playsound(intros[opindex].link);
     }
   } else {
     if (edindex != 0) {
       --edindex;
-      reset();
+      reset(false);
       currenttrack = playsound(outros[edindex].link);
     }
   }
@@ -88,34 +93,40 @@ function next() {
   if (op) {
     if (opindex != intros.length - 1) {
       ++opindex;
-      reset();
+      reset(false);
       currenttrack = playsound(intros[opindex].link);
     }
   } else {
     if (edindex != outros.length - 1) {
       ++edindex;
-      reset();
+      reset(false);
       currenttrack = playsound(outros[edindex].link);
     }
   }
 }
 
-function reset() {
+function reset(f) {
   if (op) {
     if (!intros[opindex].reveal) {
       document.getElementById("reveal").innerHTML = "Reveal";
     } else {
       document.getElementById("reveal").innerHTML = intros[opindex].name;
     }
-  } else {
+    
+    document.getElementById("title").innerHTML = `Intros: ${opindex + 1} of ${intros.length}`;
+  } else if (op === false) {
     if (!outros[edindex].reveal) {
       document.getElementById("reveal").innerHTML = "Reveal";
     } else {
       document.getElementById("reveal").innerHTML = outros[edindex].name;
     }
+    
+    document.getElementById("title").innerHTML = `Outros: ${edindex + 1} of ${outros.length}`;
   }
   
-  currenttrack.pause();
+  if (!f) {
+    currenttrack.pause();
+  }
 }
 
 function playsound(link) {
