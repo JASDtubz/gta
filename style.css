@@ -1,4 +1,4 @@
-/* Version 2024.0529.0000:0051 */
+/* Version 2024.0530.1912:0051 */
 
 html {
   height: 100%;
@@ -223,7 +223,7 @@ h2 {
   grid-area: reveal;
   position: absolute;
   text-align: center;
-  top: 22%;
+  top: 23.5%;
   width: 100%;
 }
 
@@ -249,5 +249,10 @@ h2 {
 
 .pointer {
   border-radius: 25px;
+  box-shadow: 5px 5px 25px black;
   cursor: pointer;
+}
+
+.pointer:hover {
+  box-shadow: 0px 0px 25px black;
 }
